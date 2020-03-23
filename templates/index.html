@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Graphing Demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="flex-column">
+        <h1>FHIR Demographic Graphing Service Demo</h1>
+        {% if finished %}
+        <a href="/age" class="btn btn-primary"> Age Graph </a>
+        <a href="/gender" class="btn btn-primary">Gender Graph</a>
+        <a href="/marital" class="btn btn-primary">Marital Status Graph</a>
+        <a href="/language" class="btn btn-primary">Language Graph</a>
+        <a href="/state" class="btn btn-primary">State Graph</a>
+        <a href="/country" class="btn btn-primary">Country Graph</a>
+        {%  else  %}
+        <p>Process All FHIR Patient Data</p>
+        <a href="/process" class="btn btn-primary">Process All Patients</a>
+        {% endif %}
+        {% if source %}
+        <img src= {{source.src}} />
+        {% endif %}
+    </div>
+</body>
+</html>
